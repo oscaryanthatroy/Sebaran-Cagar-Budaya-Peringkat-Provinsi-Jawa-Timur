@@ -445,7 +445,56 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //title
 
+var Title = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'bottom-right-title ol-control';
+        titleElement.innerHTML = '<h2 class="project-title">Sebaran Cagar Budaya Peringkat Provinsi Jawa Timur</h2>';
+        return titleElement;
+    })(),
+    target: 'bottom-right-container'
+});
+map.addControl(Title)
+    
 //abstract
+
+var Abstract = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'top-right-abstract ol-control';
+        titleElement.id = 'abstract';
+
+        var linkElement = document.createElement('a');
+
+        if (467 > 240) {
+            linkElement.setAttribute("onmouseenter", "showAbstract()");
+            linkElement.setAttribute("onmouseleave", "hideAbstract()");
+            linkElement.innerHTML = 'i';
+
+            window.hideAbstract = function() {
+                linkElement.classList.add("project-abstract");
+                linkElement.classList.remove("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'i';
+            }
+
+            window.showAbstract = function() {
+                linkElement.classList.remove("project-abstract");
+                linkElement.classList.add("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'Peta ini menampilkan lokasi Cagar Budaya peringkat Provinsi Jawa Timur beserta data pendukung seperti : jaringan jalan,batas kabupaten/kota,serta overlay kawasan risiko bencana (gempa bumi,banjir,banjir bandang,likuifaksi,longsor) dan zona rawan gunung api. Peta ini disusun menggunakan data pengolahan SIG. Diperoleh dari Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur,Dinas Pekerjaan Umum Provinsi Jawa Timur dan Pusat Vulkanologi dan Mitigasi Bencana Geologi.';
+            }
+
+            hideAbstract();
+        } else {
+            linkElement.classList.add("project-abstract-uncollapsed");
+            linkElement.innerHTML = 'Peta ini menampilkan lokasi Cagar Budaya peringkat Provinsi Jawa Timur beserta data pendukung seperti : jaringan jalan,batas kabupaten/kota,serta overlay kawasan risiko bencana (gempa bumi,banjir,banjir bandang,likuifaksi,longsor) dan zona rawan gunung api. Peta ini disusun menggunakan data pengolahan SIG. Diperoleh dari Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur,Dinas Pekerjaan Umum Provinsi Jawa Timur dan Pusat Vulkanologi dan Mitigasi Bencana Geologi.';
+        }
+
+        titleElement.appendChild(linkElement);
+        return titleElement;
+    })(),
+    target: 'top-right-container'
+});
+map.addControl(Abstract);
 
 
 //geolocate
@@ -469,6 +518,12 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //layerswitcher
 
+var layerSwitcher = new ol.control.LayerSwitcher({
+    tipLabel: "Layers",
+    target: 'top-right-container'
+});
+map.addControl(layerSwitcher);
+    
 
 
 
