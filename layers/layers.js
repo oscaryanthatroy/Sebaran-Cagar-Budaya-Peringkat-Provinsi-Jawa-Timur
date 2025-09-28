@@ -1,14 +1,14 @@
 var wms_layers = [];
 
 
-        var lyr_OpenStreetMap_0 = new ol.layer.Tile({
-            'title': 'OpenStreetMap',
+        var lyr_GoogleSatelite_0 = new ol.layer.Tile({
+            'title': 'Google Satelite',
             'opacity': 1.000000,
             
             
             source: new ol.source.XYZ({
             attributions: ' ',
-                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+                url: 'https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'
             })
         });
 var format_bataskabupatenandkota_1 = new ol.format.GeoJSON();
@@ -92,8 +92,8 @@ var lyr_CagarBudayaPeringkatProvinsi_5 = new ol.layer.Vector({
                 title: '<img src="styles/legend/CagarBudayaPeringkatProvinsi_5.png" />  Cagar Budaya Peringkat Provinsi'
             });
 
-lyr_OpenStreetMap_0.setVisible(true);lyr_bataskabupatenandkota_1.setVisible(true);lyr_zonagunungapi_2.setVisible(true);lyr_Risiko_Bencana_Jatim_3.setVisible(true);lyr_jaringan_jalan_4.setVisible(true);lyr_CagarBudayaPeringkatProvinsi_5.setVisible(true);
-var layersList = [lyr_OpenStreetMap_0,lyr_bataskabupatenandkota_1,lyr_zonagunungapi_2,lyr_Risiko_Bencana_Jatim_3,lyr_jaringan_jalan_4,lyr_CagarBudayaPeringkatProvinsi_5];
+lyr_GoogleSatelite_0.setVisible(true);lyr_bataskabupatenandkota_1.setVisible(true);lyr_zonagunungapi_2.setVisible(true);lyr_Risiko_Bencana_Jatim_3.setVisible(true);lyr_jaringan_jalan_4.setVisible(true);lyr_CagarBudayaPeringkatProvinsi_5.setVisible(true);
+var layersList = [lyr_GoogleSatelite_0,lyr_bataskabupatenandkota_1,lyr_zonagunungapi_2,lyr_Risiko_Bencana_Jatim_3,lyr_jaringan_jalan_4,lyr_CagarBudayaPeringkatProvinsi_5];
 lyr_bataskabupatenandkota_1.set('fieldAliases', {'KABUPATEN': 'KABUPATEN', 'PROVINSI': 'PROVINSI', 'Shape_Leng': 'Shape_Leng', 'Shape_Area': 'Shape_Area', 'CEK': 'CEK', });
 lyr_zonagunungapi_2.set('fieldAliases', {'fid': 'fid', 'OBJECTID_1': 'OBJECTID_1', 'NAMOBJ': 'NAMOBJ', 'FCODE': 'FCODE', 'LCODE': 'LCODE', 'METADATA': 'METADATA', 'REMARK': 'REMARK', 'THTERBIT': 'THTERBIT', 'CLAPI': 'CLAPI', 'DEPMAG': 'DEPMAG', 'ERU': 'ERU', 'INDGA': 'INDGA', 'KOORDX': 'KOORDX', 'KOORDY': 'KOORDY', 'LAV': 'LAV', 'MATGA': 'MATGA', 'MON': 'MON', 'SRS_ID': 'SRS_ID', 'TEK': 'TEK', 'TIM': 'TIM', 'VEI': 'VEI', 'VIC': 'VIC', 'DUR': 'DUR', 'VEEA': 'VEEA', 'Status': 'Status', });
 lyr_Risiko_Bencana_Jatim_3.set('fieldAliases', {'Shape_Leng': 'Shape_Leng', 'Shape_Area': 'Shape_Area', 'layer': 'layer', });
